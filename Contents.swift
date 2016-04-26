@@ -58,7 +58,7 @@ func ImageProcessor(task: [String], intensity: [Int])-> UIImage{
                 var pixel = myRGB1.pixels[index]
                 let redDiff = Int(pixel.red) - avgRed
                 if(redDiff > 0){
-                    pixel.red = UInt8(max(0,min(255,avgRed+redDiff*intensity[i])))
+                    pixel.red = UInt8(max(0,min(255,avgRed+redDiff/intensity[i])))
                     myRGB1.pixels[index] = pixel
                 }
             }
